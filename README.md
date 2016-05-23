@@ -32,6 +32,8 @@ fastThreshold: | number | 20 | minimum moved distance for fast swipe
 duration | number | 200 | duration for transition
 onShow | func | null | callback function after active element changed
 
+You can also have `className` `style` props for swipe element.
+
 # License
 
 MIT

@@ -29,7 +29,7 @@ name   | type   | default    | description
 active | number | 0         | Current active
 threshold | number | 200 | Maximun duration in ms for fast swipe
 fastThreshold: | number | 20 | minimum moved distance for fast swipe
-duration | number | 20) | duration for transition
+duration | number | 200 | duration for transition
 onShow | func | null | callback function after active element changed
 
 # License

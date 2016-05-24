@@ -10,9 +10,9 @@ export default class Swipe extends Component {
     // current active item index
     active: 0,
     // maximun duration in ms for fast swipe
-    threshold: 300,
+    threshold: 200,
     // minimum moved distance for fast swipe
-    fastThreshold: 10,
+    fastThreshold: 20,
     // default animation duration
     duration: 300,
     // play interval in ms

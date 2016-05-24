@@ -47,9 +47,6 @@ export default class Swipe extends Component {
   componentWillUnmount() {
     this.hscroll.unbind()
   }
-  curr() {
-    return this.hscroll.curr()
-  }
   onShow(n) {
     let fn = this.props.onShow
     if (fn) fn(n)

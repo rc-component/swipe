@@ -1,10 +1,11 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import Swipe from '../index';
+import styles from './style.css'
+import cx from 'classnames'
 
 const boxStyles = {
   width: 300,
-  height: 100,
   position: 'relative'
 }
 
@@ -15,8 +16,71 @@ const itemStyles = {
   ['float']: 'left'
 }
 
+const imgStyles = {
+  width: '100%',
+  display: 'block',
+  height: 'auto'
+}
+
 storiesOf('Swipe', module)
-  .add('single swipe', () => {
+  .add('carousel', () => {
+    let Foo = React.createClass({
+      getInitialState: function () {
+        return {
+          play: true,
+          curr: 0
+        }
+      },
+      play: function () {
+        this.setState({
+          play: true
+        })
+      },
+      stop: function () {
+        this.setState({
+          play: false
+        })
+      },
+      onShow: function (n) {
+        if (this.isMounted()) {
+          if (n !== this.state.curr) {
+            this.setState({ curr: n })
+          }
+        }
+      },
+      render: function () {
+        return (
+        <div>
+          <button ref="btn" onClick={this.play}>play</button>
+          <button onClick={this.stop}>stop</button>
+          <span>{this.state.curr}</span>
+          <div style={{position: 'relative', width: 300}}>
+            <Swipe ref="swipe"
+              play={this.state.play}
+              active={this.state.curr}
+              onShow={this.onShow}>
+              <a href="#" style={{display:'block', ['float']:'left'}}><img style={imgStyles} src="http://placehold.it/350x150" alt="one"/></a>
+              <a href="#" style={{display:'block', ['float']:'left'}}><img style={imgStyles} src="http://placehold.it/350x150" alt="two"/></a>
+              <a href="#" style={{display:'block', ['float']:'left'}}><img style={imgStyles} src="http://placehold.it/350x150" alt="three"/></a>
+            </Swipe>
+            <div className={styles.indicator}>
+              <ul>
+              {[0, 1, 2].map(n => {
+                let clz = cx({
+                  [styles.active]: n == this.state.curr
+                })
+                return <li key={n} className={clz}></li>
+              })}
+              </ul>
+            </div>
+          </div>
+        </div>
+        )
+      }
+    })
+    return <Foo />
+  })
+  .add('simple swipe', () => {
     return (
     <Swipe style={boxStyles}>
       <div style={{...itemStyles, backgroundColor: 'lightgreen'}}>one</div>

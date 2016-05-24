@@ -26,7 +26,9 @@ Build with [webpack](https://webpack.github.io/) and [CSS Modules](https://githu
 
 name   | type   | default    | description
 -------| ------ | ---------- | ------------
-active | number | 0         | Current active
+play   | bool   | false      | Playing status
+interval | number | 1000     | Play interval in miliseconds
+active | number | 0          | Current active
 threshold | number | 200 | Maximun duration in ms for fast swipe
 fastThreshold: | number | 20 | minimum moved distance for fast swipe
 duration | number | 200 | duration for transition

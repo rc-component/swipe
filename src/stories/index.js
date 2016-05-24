@@ -56,6 +56,7 @@ storiesOf('Swipe', module)
           <span>{this.state.curr}</span>
           <div style={{position: 'relative', width: 300}}>
             <Swipe ref="swipe"
+              className={styles.noSelect}
               play={this.state.play}
               active={this.state.curr}
               onShow={this.onShow}>

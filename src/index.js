@@ -2,7 +2,6 @@ import React, { Component, PropTypes, Children } from 'react'
 import ReactDom from 'react-dom'
 import Hscroll from 'hscroll'
 
-
 export default class Swipe extends Component {
   static defaultProps = {
     //iterate items
@@ -12,11 +11,11 @@ export default class Swipe extends Component {
     // maximun duration in ms for fast swipe
     threshold: 200,
     // minimum moved distance for fast swipe
-    fastThreshold: 20,
+    fastThreshold: 15,
     // default animation duration
     duration: 300,
     // play interval in ms
-    interval: 1000
+    interval: 2000
   }
   static propTypes = {
     active: PropTypes.number,

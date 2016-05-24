@@ -1,3 +1,6 @@
+.noSelect {
+  user-select: none;
+}
 .indicator {
   position: absolute;
   bottom: 10px;

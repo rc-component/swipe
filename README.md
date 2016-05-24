@@ -36,10 +36,10 @@ Build with [webpack](https://webpack.github.io/) and [CSS Modules](https://githu
 name   | type   | default    | description
 -------| ------ | ---------- | ------------
 play   | bool   | false      | Playing status
-interval | number | 1000     | Play interval in miliseconds
+interval | number | 2000     | Play interval in miliseconds
 active | number | 0          | Current active item index
 threshold | number | 200 | Maximun duration in ms for fast swipe
-fastThreshold: | number | 20 | minimum moved distance for fast swipe
+fastThreshold: | number | 15 | minimum moved distance for fast swipe
 duration | number | 200 | duration for transition
 onShow | func | null | callback function after active element changed
 

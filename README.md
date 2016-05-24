@@ -15,6 +15,7 @@ Build with [webpack](https://webpack.github.io/) and [CSS Modules](https://githu
 * Support wheel event, mousemove event and touchmove event.
 * Driven by props, play/stop support.
 * User friendly, buildin fast swipe check.
+* No conflit with transition property on children.
 
 ## Install
 

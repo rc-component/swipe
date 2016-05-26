@@ -39,7 +39,7 @@ export default class Swipe extends Component {
       autoWidth: true,
       interval: props.interval
     })
-    if (props.active) hscroll.show(props.active, 20)
+    if (props.active) hscroll.show(props.active, 0)
     hscroll.on('show', this.onShow.bind(this))
     if (props.play) hscroll.play()
   }

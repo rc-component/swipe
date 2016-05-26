@@ -1,7 +1,11 @@
 {
   "name": "rc-swipe",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Overlay Component",
+  "keywords": [
+    "react-component",
+    "swipe"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/rc-component/swipe.git"

@@ -50,13 +50,15 @@ export default class Swipe extends Component {
     let fn = this.props.onShow
     if (fn) fn(n)
   }
-  componentWillReceiveProps(props) {
-    this.hscroll.refresh()
-    this.hscroll.show(props.active)
+  componentDidUpdate() {
+    let hscroll = this.hscroll
+    let props = this.props
+    hscroll.refresh()
+    hscroll.show(props.active)
     if (props.play) {
-      this.hscroll.play()
+      hscroll.play()
     } else {
-      this.hscroll.stop()
+      hscroll.stop()
     }
   }
   prev() {

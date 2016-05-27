@@ -26,3 +26,30 @@
 .indicator ul > li.active {
   background-color: #fff;
 }
+.slick {
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin-top: -33.5px;
+  width: 67px;
+  height: 67px;
+  line-height: 67px;
+  top: 50%;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  text-indent: 150%;
+  cursor: pointer;
+  opacity: 0.4;
+}
+.slick:hover {
+  opacity: 1;
+}
+.slickNext {
+  right: 5%;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iNDIiIHZpZXdCb3g9IjAgMCAyNCA0MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+U2xpY2UgMTwvdGl0bGU+PHBhdGggZD0iTTI0IDIwLjc1TDMuNzUgNDEgMS4xIDM3Ljc4bDE3LjE4NS0xNy4wM0wuODkyIDMuMzU3IDMuNzUuNSAyNCAyMC43NXoiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
+}
+.slickPrev {
+  left: 5%;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iNDEiIHZpZXdCb3g9IjAgMCAyNCA0MSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+QmFjayBDaGV2cm9uIENvcHk8L3RpdGxlPjxwYXRoIGQ9Ik0wIDIwLjI1TDIwLjI1IDBsMi42NSAzLjIyTDUuNzE1IDIwLjI1bDE3LjM5MyAxNy4zOTNMMjAuMjUgNDAuNSAwIDIwLjI1eiIgZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+);
+}

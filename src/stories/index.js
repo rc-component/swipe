@@ -41,6 +41,12 @@ storiesOf('Swipe', module)
           play: false
         })
       },
+      prev: function () {
+        this.refs.swipe.prev()
+      },
+      next: function () {
+        this.refs.swipe.next()
+      },
       onShow: function (n) {
         if (this.isMounted()) {
           if (n !== this.state.curr) {
@@ -74,6 +80,8 @@ storiesOf('Swipe', module)
               })}
               </ul>
             </div>
+            <div onClick={this.prev} className={cx(styles.slick, styles.slickPrev)} />
+            <div onClick={this.next} className={cx(styles.slick, styles.slickNext)} />
           </div>
         </div>
         )

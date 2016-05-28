@@ -58,7 +58,6 @@ export default class Swipe extends Component {
       let nkey = Children.toArray(props.children)[props.active].key
       if (key === nkey) duration = 0
     }
-    hscroll.refresh()
     hscroll.show(props.active, duration)
     if (props.play !== this.props.play) {
       if (props.play) {
@@ -67,6 +66,9 @@ export default class Swipe extends Component {
         hscroll.stop()
       }
     }
+  }
+  componentDidUpdate() {
+    this.hscroll.refresh()
   }
   prev() {
     this.hscroll.stop()

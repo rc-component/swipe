@@ -51,18 +51,22 @@ export default class Swipe extends Component {
     if (fn) fn(n)
   }
   componentWillReceiveProps(props) {
-    let key = Children.toArray(this.props.children)[this.hscroll.curr()].key
-    let nkey = Children.toArray(props.children)[props.active].key
-    let duration = key === nkey ? 0 : null
-    this.hscroll.refresh()
-    this.hscroll.show(props.active, duration)
-    if (props.play) {
-      this.hscroll.play()
-    } else {
-      this.hscroll.stop()
+    let duration
+    let hscroll = this.hscroll
+    if (this.props.children && props.children) {
+      let key = Children.toArray(this.props.children)[hscroll.curr()].key
+      let nkey = Children.toArray(props.children)[props.active].key
+      if (key === nkey) duration = 0
     }
-  }
-  getActiveKey() {
+    hscroll.refresh()
+    hscroll.show(props.active, duration)
+    if (props.play !== this.props.play) {
+      if (props.play) {
+        hscroll.play()
+      } else {
+        hscroll.stop()
+      }
+    }
   }
   prev() {
     this.hscroll.stop()

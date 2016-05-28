@@ -46,7 +46,7 @@
     "webpack": "^1.13.0"
   },
   "dependencies": {
-    "hscroll": "^0.2.0",
+    "hscroll": "^0.2.1",
     "react": "^15.0.0",
     "react-dom": "^15.0.0"
   },

@@ -41,7 +41,9 @@ active | number | 0          | Current active item index
 threshold | number | 200 | Maximun duration in ms for fast swipe
 fastThreshold: | number | 15 | minimum moved distance for fast swipe
 duration | number | 200 | duration for transition
-onShow | func | null | callback function after active element changed
+onShow | func | null | callback function called with active index after active element changed
+
+_Remember use `onShow` to sync `active` property if you change swipe state by props_
 
 You can also have `className` `style` props for swipe element.
 

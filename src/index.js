@@ -53,7 +53,7 @@ export default class Swipe extends Component {
     let duration
     let hscroll = this.hscroll
     if (this.props.children && props.children) {
-      let key = Children.toArray(this.props.children)[this.props.active].key
+      let key = Children.toArray(this.props.children)[hscroll.currIndex()].key
       let nkey = Children.toArray(props.children)[props.active].key
       if (key === nkey) duration = 0
     }

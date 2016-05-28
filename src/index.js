@@ -70,10 +70,12 @@ export default class Swipe extends Component {
     this.hscroll.refresh()
   }
   prev() {
+    if (this.hscroll.animating) return
     this.hscroll.stop()
     this.hscroll.prev()
   }
   next() {
+    if (this.hscroll.animating) return
     this.hscroll.stop()
     this.hscroll.next()
   }

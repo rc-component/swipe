@@ -97,7 +97,7 @@ storiesOf('Swipe', module)
       <div style={{...itemStyles, backgroundColor: 'gold'}}>three</div>
     </Swipe>
   )})
-  .add('set active', () => {
+  .add('loop by prev and next', () => {
     let Foo = React.createClass({
       getInitialState: function () {
         return {

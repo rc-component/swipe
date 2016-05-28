@@ -78,12 +78,10 @@ export default class Swipe extends Component {
     }
     hscroll.refresh()
     hscroll.show(props.active, duration)
-    if (props.play !== prevProps.play) {
-      if (props.play) {
-        hscroll.play()
-      } else {
-        hscroll.stop()
-      }
+    if (props.play) {
+      hscroll.play()
+    } else {
+      hscroll.stop()
     }
   }
   prev() {

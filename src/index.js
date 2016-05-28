@@ -2,6 +2,16 @@ import React, { Component, PropTypes, Children } from 'react'
 import ReactDom from 'react-dom'
 import Hscroll from 'hscroll'
 
+// WTF react need to check children type
+function getKeyByIndex(props, index) {
+  let children = props.children
+  if (!children) return
+  let arr = Children.toArray(children)
+  let child = arr[index]
+  if (!child) return
+  return child.key
+}
+
 export default class Swipe extends Component {
   static defaultProps = {
     //iterate items
@@ -40,6 +50,7 @@ export default class Swipe extends Component {
       interval: props.interval
     })
     if (props.active) hscroll.show(props.active, 0)
+    this.current = props.active
     hscroll.on('show', this.onShow.bind(this))
     if (props.play) hscroll.play()
   }
@@ -47,27 +58,33 @@ export default class Swipe extends Component {
     if (this.hscroll) this.hscroll.unbind()
   }
   onShow(n) {
+    if (n === this.current) return
+    this.current = n
     if (this.props.onShow) this.props.onShow(n)
   }
-  componentWillReceiveProps(props) {
-    let duration
+  shouldComponentUpdate() {
+    if (this.hscroll.animating) return false
+    return true
+  }
+  componentDidUpdate(prevProps) {
+    let props = this.props
     let hscroll = this.hscroll
-    if (this.props.children && props.children) {
-      let key = Children.toArray(this.props.children)[hscroll.currIndex()].key
-      let nkey = Children.toArray(props.children)[props.active].key
+    let duration
+    if (prevProps.children && props.children) {
+      // current
+      let key = getKeyByIndex(prevProps, this.current)
+      let nkey = getKeyByIndex(props, props.active)
       if (key === nkey) duration = 0
     }
+    hscroll.refresh()
     hscroll.show(props.active, duration)
-    if (props.play !== this.props.play) {
+    if (props.play !== prevProps.play) {
       if (props.play) {
         hscroll.play()
       } else {
         hscroll.stop()
       }
     }
-  }
-  componentDidUpdate() {
-    this.hscroll.refresh()
   }
   prev() {
     if (this.hscroll.animating) return

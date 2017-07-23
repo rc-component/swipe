@@ -48,11 +48,17 @@ storiesOf('Swipe', module)
         this.refs.swipe.next()
       },
       onShow: function (n) {
-        if (this.isMounted()) {
+        if (this.mounted) {
           if (n !== this.state.curr) {
             this.setState({ curr: n })
           }
         }
+      },
+      componentDidMount() {
+        this.mounted = true
+      },
+      componentWillUnmount() {
+        this.mounted = false
       },
       render: function () {
         return (

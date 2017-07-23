@@ -4,7 +4,7 @@ Swipe Component for [react](https://facebook.github.io/react/).
 
 Built on top of [hscroll](https://github.com/chemzqm/hscroll)
 
-Build with [webpack](https://webpack.github.io/) and [CSS Modules](https://github.com/css-modules/css-modules)
+Build with [webpack](https://webpack.github.io/)
 
 [Story book](https://rc-component.github.io/swipe/)
 
@@ -16,6 +16,10 @@ Build with [webpack](https://webpack.github.io/) and [CSS Modules](https://githu
 * Driven by props, play/stop support.
 * User friendly, buildin fast swipe check.
 * No conflit with transition property on children.
+
+## TODO
+
+* Infinite loop
 
 ## Install
 

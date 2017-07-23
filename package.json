@@ -39,16 +39,18 @@
     "postcss-cssnext": "^2.5.2",
     "postcss-loader": "^0.9.1",
     "raw-loader": "^0.5.1",
-    "react": "^15.0.0",
     "react-addons-test-utils": "^15.0.0",
     "sinon": "^1.17.3",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.0"
   },
   "dependencies": {
-    "hscroll": "^0.2.2",
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0"
+    "hscroll": "^0.2.6",
+    "prop-types": "^15.5.10"
+  },
+  "peerDependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "main": "dist/index.js",
   "engines": {

@@ -1,6 +1,6 @@
 {
   "name": "rc-swipe",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Swipe component for react",
   "keywords": [
     "react-component",
@@ -42,15 +42,13 @@
     "react-addons-test-utils": "^15.0.0",
     "sinon": "^1.17.3",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.0"
+    "webpack": "^1.13.0",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1"
   },
   "dependencies": {
-    "hscroll": "^0.2.6",
+    "hscroll": "^1.2.2",
     "prop-types": "^15.5.10"
-  },
-  "peerDependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
   },
   "main": "dist/index.js",
   "esnext": "src/index.js",

@@ -42,7 +42,7 @@ export default class Swipe extends Component {
     let props = this.props
     let n = Children.count(props.children)
     this.refs.wrapper.style.width = (n * el.clientWidth) + 'px'
-    let hscroll = this.hscroll = Hscroll(el, {
+    let hscroll = this.hscroll = new Hscroll(el, {
       type: 'swipe',
       threshold: props.threshold,
       fastThreshold: props.fastThreshold,
